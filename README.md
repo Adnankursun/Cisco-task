@@ -15,7 +15,7 @@ To be able use that code for different environments, you need to change the tfva
 1. Clone the repository from GitHub
 
 ```
-`cd cisco-task`
+`cd cisco-task/task_files`
 ```
 
 
