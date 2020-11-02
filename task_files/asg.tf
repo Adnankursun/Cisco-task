@@ -2,7 +2,7 @@ resource "aws_launch_configuration" "as_conf" {
   name          = "web_config"
   image_id      = "${var.ami_id}"
   instance_type = "t2.micro"
-  key_name      = "asg-key-pair"
+  key_name      = "${aws_key_pair.us-east-1-key.id}"
   user_data     = "${file("userdata.sh")}"
 
   security_groups             = ["${aws_security_group.asg-sec-group.id}"]
