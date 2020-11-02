@@ -15,6 +15,3 @@ variable "private_cidr3" {}
 
 variable "launch-config-name" {}
 
-variable "tags" {
-  type = "map"
-}
