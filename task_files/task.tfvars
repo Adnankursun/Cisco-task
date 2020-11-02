@@ -9,20 +9,12 @@ private_cidr1               =   "10.0.1.0/24"
 private_cidr2               =   "10.0.2.0/24"
 private_cidr3               =   "10.0.3.0/24"
 
-image_owner                 =   "099720109477"
+ami_id                      =   "ami-01aad86525617098d"
 desired_capacity            =   "1"
 max_size                    =   "3"
-min_size                    =   "1"
+min_size                    =   "2"
 launch-config-name          =    "cisco"
 
-tags    =   {
-    Name                    =   "Cisco_Project"
-    Environment             =   "Dev"
-    Team                    =   "DevOps"
-    Department              =   "IT"
-    Bill                    =   "CFO"
-    Quarter                 =   "4"
-   }
 
 
   

@@ -1,13 +1,14 @@
-resource "aws_elb" "bar" {
-  name            = "cisco-terraform-elbs"
+resource "aws_elb" "cisco_elb" {
+  name            = "cisco-elb"
   security_groups = ["${aws_security_group.asg-sec-group.id}"]
 
-  #subnets         = ["${aws_subnet.public1.id}"]
-  availability_zones = [
-    "${var.region}a",
-    "${var.region}b",
-    "${var.region}c",
+  subnets = [
+    "${aws_subnet.public1.id}",
+    "${aws_subnet.public2.id}",
+    "${aws_subnet.public3.id}",
   ]
+
+  cross_zone_load_balancing = true
 
   listener {
     instance_port     = 80
@@ -30,11 +31,11 @@ resource "aws_elb" "bar" {
   connection_draining_timeout = 400
 
   tags = {
-    Name = "cisco-terraform-elbs"
+    Name = "cisco_elb"
   }
 }
 
 resource "aws_autoscaling_attachment" "asg_attachment_bar" {
-  autoscaling_group_name = "${aws_autoscaling_group.bar.id}"
-  elb                    = "${aws_elb.bar.id}"
+  autoscaling_group_name = "${aws_autoscaling_group.cisco-asg.id}"
+  elb                    = "${aws_elb.cisco_elb.id}"
 }
