@@ -35,7 +35,7 @@ resource "aws_autoscaling_group" "cisco-asg" {
   }
   tag {
     key                 = "Name"
-    value               = "cisco_web_server"
+    value               = "${var.asg_tag}"
     propagate_at_launch = true
   }
 }

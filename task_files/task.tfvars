@@ -10,6 +10,7 @@ private_cidr2               =   "10.0.2.0/24"
 private_cidr3               =   "10.0.3.0/24"
 
 ami_id                      =   "ami-01aad86525617098d"
+asg_tag                     =   "cisco_web_server"
 desired_capacity            =   "2"
 max_size                    =   "3"
 min_size                    =   "2"

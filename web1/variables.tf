@@ -12,4 +12,3 @@ variable "private_cidr1" {}
 variable "private_cidr2" {}
 variable "private_cidr3" {}
 variable "launch-config-name" {}
-
